@@ -25,6 +25,11 @@ class FontListViewController: UITableViewController {
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        // Put an edit button on the RHS of the nav bar
+        if showFavourites {
+            navigationItem.rightBarButtonItem = editButtonItem()
+        }
+        
         let preferredTableViewFont = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
         cellPointSize = preferredTableViewFont.pointSize
     }
@@ -73,7 +78,7 @@ class FontListViewController: UITableViewController {
         return showFavourites
     }
     
-    // Deleti   ng
+    // Deleting
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         // Only editing on favourites
@@ -95,6 +100,14 @@ class FontListViewController: UITableViewController {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
         }
+    }
+    
+    // Re-ordering
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        
+        FavouritesList.sharedFavouritesList.moveItem(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
+        fontNames = FavouritesList.sharedFavouritesList.favourites
+        
     }
     
     

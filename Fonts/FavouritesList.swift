@@ -51,6 +51,13 @@ class FavouritesList {
         
     }
     
+    func moveItem(fromIndex from: Int, toIndex to: Int) {
+        let item = favourites[from]
+        favourites.removeAtIndex(from)
+        favourites.insert(item, atIndex: to)
+        saveFavourites()
+    }
+    
     func saveFavourites() {
         
         // Fetch the user defaults
