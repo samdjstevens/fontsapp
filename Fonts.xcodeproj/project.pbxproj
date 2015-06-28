@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38460D9E1B405B4A000342F6 /* FontListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38460D9D1B405B4A000342F6 /* FontListViewController.swift */; };
+		38460DA01B406247000342F6 /* FontSizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38460D9F1B406247000342F6 /* FontSizesViewController.swift */; };
 		38694DF11B35B25A0002B242 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38694DF01B35B25A0002B242 /* AppDelegate.swift */; };
 		38694DF61B35B25A0002B242 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38694DF41B35B25A0002B242 /* Main.storyboard */; };
 		38694DF81B35B25A0002B242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38694DF71B35B25A0002B242 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38460D9D1B405B4A000342F6 /* FontListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListViewController.swift; sourceTree = "<group>"; };
+		38460D9F1B406247000342F6 /* FontSizesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSizesViewController.swift; sourceTree = "<group>"; };
 		38694DED1B35B25A0002B242 /* Fonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38694DF01B35B25A0002B242 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38694DF51B35B25A0002B242 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			children = (
 				38694DF01B35B25A0002B242 /* AppDelegate.swift */,
 				38694E201B35B9C90002B242 /* RootViewController.swift */,
+				38460D9D1B405B4A000342F6 /* FontListViewController.swift */,
+				38460D9F1B406247000342F6 /* FontSizesViewController.swift */,
 				38694DF41B35B25A0002B242 /* Main.storyboard */,
 				38694E1E1B35B7260002B242 /* FavouritesList.swift */,
 				38694DF71B35B25A0002B242 /* Assets.xcassets */,
@@ -258,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38460DA01B406247000342F6 /* FontSizesViewController.swift in Sources */,
 				38694E1F1B35B7260002B242 /* FavouritesList.swift in Sources */,
+				38460D9E1B405B4A000342F6 /* FontListViewController.swift in Sources */,
 				38694DF11B35B25A0002B242 /* AppDelegate.swift in Sources */,
 				38694E211B35B9C90002B242 /* RootViewController.swift in Sources */,
 			);
@@ -485,6 +493,7 @@
 				38694E171B35B25A0002B242 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38694E181B35B25A0002B242 /* Build configuration list for PBXNativeTarget "FontsTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +502,7 @@
 				38694E1A1B35B25A0002B242 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38694E1B1B35B25A0002B242 /* Build configuration list for PBXNativeTarget "FontsUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +511,7 @@
 				38694E1D1B35B25A0002B242 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
