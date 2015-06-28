@@ -25,6 +25,14 @@ class FontSizesViewController: UITableViewController {
     private let cellIdentifier = "FontNameAndSize"
     
     
+    // Make the table cell height auto adjust...
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.estimatedRowHeight = 44.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    
     // How many rows in each section...
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pointSizes.count
@@ -41,6 +49,7 @@ class FontSizesViewController: UITableViewController {
         return cell
         
     }
+    
     
     // Helper function to grab the right UIFont for a given indexPath (row)
     func fontForDisplay(atIndexPath indexPath: NSIndexPath) -> UIFont {

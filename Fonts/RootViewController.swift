@@ -31,6 +31,10 @@ class RootViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Configure the table to auto adjust cell height
+        tableView.estimatedRowHeight = 44.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         // Load in the font family names
         familyNames = UIFont.familyNames().sort() as [String]
         

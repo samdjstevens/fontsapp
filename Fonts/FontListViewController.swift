@@ -21,6 +21,10 @@ class FontListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Configure the table to auto adjust cell height
+        tableView.estimatedRowHeight = 44.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         let preferredTableViewFont = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
         cellPointSize = preferredTableViewFont.pointSize
     }
