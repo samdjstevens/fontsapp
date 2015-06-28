@@ -68,6 +68,35 @@ class FontListViewController: UITableViewController {
 
     }
     
+    // Only allow editing of the tableview if we're showing the favourites
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return showFavourites
+    }
+    
+    // Deleti   ng
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // Only editing on favourites
+        if !showFavourites {
+            return
+        }
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            // Delete the row from the datasource
+            let favourite = fontNames[indexPath.row]
+            
+            // delete the favourite
+            FavouritesList.sharedFavouritesList.removeFavourite(favourite)
+            
+            // get the favourites again
+            fontNames = FavouritesList.sharedFavouritesList.favourites
+            
+            // Remove the row from the table
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        }
+    }
+    
     
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
