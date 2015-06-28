@@ -104,4 +104,32 @@ class RootViewController: UITableViewController {
         
         return nil
     }
+    
+    
+    // Prepare the FontViewController for the segue, showing either the fonts for a font family,
+    // or the favourites.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // Get the new view controller
+        let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+        let listVC = segue.destinationViewController as! FontListViewController
+        
+        if indexPath.section == 0 {
+            // Font names list
+            let familyName = familyNames[indexPath.row]
+            var fontNames = UIFont.fontNamesForFamilyName(familyName) as [String]
+            fontNames.sortInPlace()
+            listVC.fontNames = fontNames
+            listVC.navigationItem.title = familyName
+            listVC.showFavourites = false
+        } else {
+            
+            // Favourites list
+            listVC.fontNames = favouritesList.favourites
+            listVC.navigationItem.title = "Favourites"
+            listVC.showFavourites = true
+        }
+        
+    }
+    
 }
